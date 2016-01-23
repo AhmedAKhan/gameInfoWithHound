@@ -1,5 +1,22 @@
 {
+  "name": "videogame-information",
+  "version": "1.0.0",
+  "description": "This will just simply take simple data from imdb",
+  "main": "server.js",
+  "author": "Ahmed Arif Khan",
+  "scripts": {
+    "test": "npm run test-node",
+    "test-node": "mocha ",
+    "start": "node server.js",
+    "predeploy": "echo im about to deploy",
+    "postdeploy": "echo ive deployed"
+  },
   "dependencies": {
+    "cheerio": "latest",
+    "express": "latest",
+    "fs": "0.0.2",
+    "request": "latest",
+    "superagent": "^1.2.0",
     "express": "^4.13.3",
     "hound": "file:hound-0.2.1.tgz",
     "minimist": "^1.2.0"

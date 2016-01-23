@@ -6,7 +6,7 @@ var infoElet = document.getElementById("infoJSON");
 
 
 // all the consts
-var URL = "localhost:8446"
+var BASE_URL = "localhost:8446"
 
 
 //REQUEST INFO JSON
@@ -25,7 +25,7 @@ function gotResponseFromHoundify(text){
       responsiveVoice.speak(parsedResult);
     }
   };
-  xhttp.open("POST", "l", true);
+  xhttp.open("POST", BASE_URL+"/processText", true);
   xhttp.send();
 
 }
