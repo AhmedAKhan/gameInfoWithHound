@@ -1,8 +1,8 @@
 //dependencies
 var express = require('express');
 var fs = require('fs');
-var scraper = require('./infoController');
-var processText = require('./textProcessor');
+// var scraper = require('./infoController');
+var processText = require('./processText');
 // var http = require('http');
 
 
@@ -44,6 +44,7 @@ app.post("/processText", function(req, res){
   req.on("data", function(data){ inputText += data });
   req.on("end", function(){
     console.log("inputText: " + inputText);
+    console.log("going to the process text")
     processText(inputText, res);
   });
 });
