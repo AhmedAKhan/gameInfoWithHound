@@ -23,7 +23,7 @@ function getfastestTime(text, res){
 function processText(text, res){
   // get fastest time
   console.log("inside the process text: " + text);
-  if(text.match(/what (is|was) the fastest time it took to (finish|beat) (.*)/i) != null){
+  if(text.match(/what (is|was) the fastest time it took to (finish|beat|complete) (.*)/i) != null){
     console.log("made it in the if statement");
     return getfastestTime(text.match(/what (is|was) the fastest time it took to (finish|beat) (.*)/i)[3].trim(), res);
   }else if(false){}

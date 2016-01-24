@@ -6,8 +6,8 @@ var processText = require('./processText');
 // var http = require('http');
 
 
-var request = require('request');
-var cheerio = require('cheerio');
+// var request = require('request');
+// var cheerio = require('cheerio');
 var model = require('./model/model.js');
 var app = express();
 
