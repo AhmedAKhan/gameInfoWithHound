@@ -12,6 +12,8 @@ function save(name, time){
   console.log("name: " + name + " time: " + time);
   var obj = new schemas.fastestTime({'title':name, 'time':time});
   obj.save(function(err, object){
+
+    console.log("saved object: "+object );
     if(err){ console.log("an error has occured"); }
     nums--;
     if(nums <= 0) mongoose.connection.close();
@@ -28,7 +30,7 @@ function start(){
     var $ = cheerio.load(html);
     var i = 0;
     nums = $('ul').children().length;
-    for(var i=0; i < $('ul').children().length; i++){
+    for(var i=0; i < nums; i++){
       var time = $('ul').children().eq(i).text().match('\\(.*\\)')[0];
       var name = $('ul').children().eq(i).children().eq(0).text();
       time = time.substr(1, time.length-2);// get rid of the openning and ending brackets

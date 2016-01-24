@@ -2,6 +2,7 @@
 var express = require('express');
 var fs = require('fs');
 var scraper = require('./infoController');
+var processText = require('./textProcessor');
 // var http = require('http');
 
 
@@ -43,7 +44,7 @@ app.post("/processText", function(req, res){
   req.on("data", function(data){ inputText += data });
   req.on("end", function(){
     console.log("inputText: " + inputText);
-    res.send(inputText);
+    processText(inputText, res);
   });
 });
 
