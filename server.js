@@ -40,10 +40,11 @@ app.get('/textSearchProxy', hound.createTextProxyHandler({
 }));
 
 app.post("/processText", function(req, res){
+  console.log("got some input");
   var inputText = '';
   req.on("data", function(data){ inputText += data });
   req.on("end", function(){
-    console.log("inputText: " + inputText);
+    console.log("finished getting input - inputText:-" + inputText+"-");
     console.log("going to the process text")
     processText(inputText, res);
   });
